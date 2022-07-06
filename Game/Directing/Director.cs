@@ -44,8 +44,14 @@ namespace Security.Game.Directing
             ExecuteActions(Constants.LOAD);
             while (videoService.IsWindowOpen())
             {
+
+                // DoInputs
                 ExecuteActions(Constants.INPUT);
+
+                //DoUpdates
                 ExecuteActions(Constants.UPDATE);
+
+                //DoOutputs
                 ExecuteActions(Constants.OUTPUT);
             }
             ExecuteActions(Constants.UNLOAD);
@@ -62,3 +68,6 @@ namespace Security.Game.Directing
         }
     }
 }
+
+
+
