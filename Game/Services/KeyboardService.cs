@@ -1,4 +1,4 @@
-namespace Unit06.Game.Services
+namespace Security.Game.Services
 {
     public interface KeyboardService
     {
