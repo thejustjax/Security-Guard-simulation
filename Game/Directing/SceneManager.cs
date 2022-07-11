@@ -122,7 +122,23 @@ namespace Security.Game.Directing
         // -----------------------------------------------------------------------------------------
         // casting methods
         // -----------------------------------------------------------------------------------------
-
+        private void AddRobot(Cast cast)
+        {
+            cast.ClearActors(Constants.ROBOT_GROUP);
+        
+            int x = Constants.CENTER_X - Constants.ROBOT_WIDTH / 2;
+            int y = Constants.SCREEN_HEIGHT - - Constants.ROBOT_HEIGHT;
+        
+            Point position = new Point(x, y);
+            Point size = new Point(Constants.ROBOT_WIDTH, Constants.ROBOT_HEIGHT);
+            Point velocity = new Point(0, 0);
+        
+            Body body = new Body(position, size, velocity);
+            Image image = new Image(Constants.ROBOT_IMAGE);
+            Robot robot = new Robot(body, image, false);
+        
+            cast.AddActor(Constants.ROBOT_GROUP, robot);
+        }
 
         private void AddDialog(Cast cast, string message)
         {

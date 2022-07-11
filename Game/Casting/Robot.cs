@@ -14,8 +14,9 @@ namespace Security.Game.Casting
         private Body body;
         private Image image;
 
+        private string location;
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Constructs a new instance of Robot.
         /// </summary>
         public Robot(Body body, Image image, bool debug = false) : base(debug)
         {
@@ -40,5 +41,16 @@ namespace Security.Game.Casting
         {
             return image;
         }
+
+        public string GetLocation()
+        {
+            return location;
+        }
+
+        public void ChangeLocation(string newlocation)
+        {
+            location = newlocation;
+        }
+
     }
 }

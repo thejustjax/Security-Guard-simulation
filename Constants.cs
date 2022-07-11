@@ -13,7 +13,8 @@ namespace Security
         // GAME
         public static string GAME_NAME = "Security Guard";
         public static int FRAME_RATE = 60;
-
+        // DIFFICULTY
+        public static int ROBOT_DIFFICULTY = 
         // SCREEN
         public static int SCREEN_WIDTH = 1040;
         public static int SCREEN_HEIGHT = 680;
@@ -85,7 +86,11 @@ namespace Security
         public static string STATS_GROUP = "stats";
         public static int DEFAULT_LIVES = 3;
         public static int MAXIMUM_LIVES = 5;
-
+        //ROBOT
+        public static string ROBOT_GROUP = "robot";
+        public static string ROBOT_IMAGE = "Assets/Images/000.png";
+        public static int ROBOT_HEIGHT = 30;
+        public static int ROBOT_WIDTH;
         // HUD
         public static int HUD_MARGIN = 15;
         public static string CLOCK_GROUP = "clock";
@@ -99,6 +104,12 @@ namespace Security
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
-
+        //ROOM NAMES
+        public static string STAGE_NAME = "Stage";
+        public static string ROOM1_NAME = "Party Room 1";
+        public static string ROOM2_NAME = "Party Room 2";
+        public static string WHALL_NAME = "West Hallway";
+        public static string EHALL_NAME = "East Hallway";
+        public static string OFFICE_NAME = "Office";
     }
 }
