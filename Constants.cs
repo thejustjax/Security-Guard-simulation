@@ -14,7 +14,8 @@ namespace Security
         public static string GAME_NAME = "Security Guard";
         public static int FRAME_RATE = 60;
         // DIFFICULTY
-        public static int ROBOT_DIFFICULTY = 
+        public static int ROBOT_DIFFICULTY = 15;
+        public static int MOVE_TIME = 5;
         // SCREEN
         public static int SCREEN_WIDTH = 1040;
         public static int SCREEN_HEIGHT = 680;
