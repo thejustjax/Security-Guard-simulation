@@ -10,7 +10,11 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
+<<<<<<< HEAD
             "program": "${workspaceFolder}/bin/Debug/net6.0/unit06-game.dll",
+=======
+            "program": "${workspaceFolder}/bin/Debug/net6.0/Unit06.dll",
+>>>>>>> 1afad62d2a69b6f93294c53a089a1ab72dee7cb2
             "args": [],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
