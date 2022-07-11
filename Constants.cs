@@ -94,90 +94,10 @@ namespace Security
         public static string CLOCK_FORMAT = "TIME LEFT: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
         public static string BATTERY_FORMAT = "BATTERY: {0}%";
-
-        // BALL
-        public static string BALL_GROUP = "balls";
-        public static string BALL_IMAGE = "Assets/Images/000.png";
-        public static int BALL_WIDTH = 28;
-        public static int BALL_HEIGHT = 28;
-        public static int BALL_VELOCITY = 6;
-
-        // RACKET
-        public static string RACKET_GROUP = "rackets";
-        
-        public static List<string> RACKET_IMAGES
-            = new List<string>() {
-                "Assets/Images/100.png",
-                "Assets/Images/101.png",
-                "Assets/Images/102.png"
-            };
-
-        public static int RACKET_WIDTH = 106;
-        public static int RACKET_HEIGHT = 28;
-        public static int RACKET_RATE = 6;
-        public static int RACKET_VELOCITY = 7;
-
-        // BRICK
-        public static string BRICK_GROUP = "bricks";
-        
-        public static Dictionary<string, List<string>> BRICK_IMAGES
-            = new Dictionary<string, List<string>>() {
-                { "b", new List<string>() {
-                    "Assets/Images/010.png",
-                    "Assets/Images/011.png",
-                    "Assets/Images/012.png",
-                    "Assets/Images/013.png",
-                    "Assets/Images/014.png",
-                    "Assets/Images/015.png",
-                    "Assets/Images/016.png",
-                    "Assets/Images/017.png",
-                    "Assets/Images/018.png"
-                } },
-                { "g", new List<string>() {
-                    "Assets/Images/020.png",
-                    "Assets/Images/021.png",
-                    "Assets/Images/022.png",
-                    "Assets/Images/023.png",
-                    "Assets/Images/024.png",
-                    "Assets/Images/025.png",
-                    "Assets/Images/026.png",
-                    "Assets/Images/027.png",
-                    "Assets/Images/028.png"
-                } },
-                { "p", new List<string>() {
-                    "Assets/Images/030.png",
-                    "Assets/Images/031.png",
-                    "Assets/Images/032.png",
-                    "Assets/Images/033.png",
-                    "Assets/Images/034.png",
-                    "Assets/Images/035.png",
-                    "Assets/Images/036.png",
-                    "Assets/Images/037.png",
-                    "Assets/Images/038.png"
-                } },
-                { "y", new List<string>() {
-                    "Assets/Images/040.png",
-                    "Assets/Images/041.png",
-                    "Assets/Images/042.png",
-                    "Assets/Images/043.png",
-                    "Assets/Images/044.png",
-                    "Assets/Images/045.png",
-                    "Assets/Images/046.png",
-                    "Assets/Images/047.png",
-                    "Assets/Images/048.png"
-                } }
-        };
-
-        public static int BRICK_WIDTH = 80;
-        public static int BRICK_HEIGHT = 28;
-        public static double BRICK_DELAY = 0.5;
-        public static int BRICK_RATE = 4;
-        public static int BRICK_POINTS = 50;
-
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
         public static string ENTER_TO_START = "PRESS ENTER TO START";
-        public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
+        public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
 
     }
