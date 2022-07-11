@@ -1,8 +1,8 @@
-using System;
-using Security.Game.Directing;
-using Security.Game.Services;
+﻿using System;
+using Unit06.Game.Directing;
+using Unit06.Game.Services;
 
-namespace Security
+namespace Unit06
 {
     public class Program
     {

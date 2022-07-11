@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Security.Game.Casting;
-using Security.Game.Scripting.Raylib;
-using Security.Game.Services;
+using Unit06.Game.Casting;
+using Unit06.Game.Scripting;
+using Unit06.Game.Services;
 
 
-namespace Security.Game.Directing
+namespace Unit06.Game.Directing
 {
     /// <summary>
     /// A person who directs the game.
@@ -44,14 +44,8 @@ namespace Security.Game.Directing
             ExecuteActions(Constants.LOAD);
             while (videoService.IsWindowOpen())
             {
-
-                // DoInputs
                 ExecuteActions(Constants.INPUT);
-
-                //DoUpdates
                 ExecuteActions(Constants.UPDATE);
-
-                //DoOutputs
                 ExecuteActions(Constants.OUTPUT);
             }
             ExecuteActions(Constants.UNLOAD);
@@ -68,6 +62,3 @@ namespace Security.Game.Directing
         }
     }
 }
-
-
-
