@@ -39,55 +39,10 @@ namespace Security.Game.Scripting
 
             if (keyboardService.IsKeyPressed(Constants.HWALL_BUTTON))
             {
-                
-            }
-        }
 
-        //<summery>
-        // if the A key is clicked it will go to the start screen
-        //</summery>
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
-            {
-                callback.OnNext(nextScene);
             }
         }
-
-        //<summery>
-        // if the S key is clicked it will go to room 1
-        //</summery>        
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
-            {
-                callback.OnNext(nextScene);
-            }
-        }
-        //<summery>
-        // if the A key is clicked it will go to the start screen
-        //</summery>
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
-            {
-                callback.OnNext(nextScene);
-            }
-        }
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
-            {
-                callback.OnNext(nextScene);
-            }
-        }
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
-            {
-                callback.OnNext(nextScene);
-            }
-        }
+        
     }
 }
 
