@@ -21,6 +21,26 @@ namespace Security.Game.Scripting
             {
                 callback.OnNext(nextScene);
             }
+
+            if (keyboardService.IsKeyPressed(Constants.OFFICE_BUTTON))
+            {
+                
+            }
+
+            if (keyboardService.IsKeyPressed(Constants.ROOM1_BUTTON))
+            {
+
+            }
+
+            if (keyboardService.IsKeyPressed(Constants.ROOM2_BUTTON))
+            {
+
+            }
+
+            if (keyboardService.IsKeyPressed(Constants.HWALL_BUTTON))
+            {
+                
+            }
         }
 
         //<summery>
@@ -28,3 +48,11 @@ namespace Security.Game.Scripting
         //</summery>
     }
 }
+
+
+
+// public static string OFFICE_BUTTON = "z";
+// public static string ROOM1_BUTTON = "b";
+// public static string ROOM2_BUTTON = "v";
+// public static string HWALL_BUTTON = "c";
+// public static string EWALL_BUTTON = "x";
