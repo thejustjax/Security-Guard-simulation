@@ -208,7 +208,7 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.LEVEL_GROUP);
 
-            Text text = new Text(Constants.LEVEL_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.CLOCK_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
                 Constants.ALIGN_LEFT, Constants.WHITE);
             Point position = new Point(Constants.HUD_MARGIN, Constants.HUD_MARGIN);
 
@@ -251,7 +251,7 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.SCORE_GROUP);
 
-            Text text = new Text(Constants.SCORE_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.BATTERY_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.HUD_MARGIN);
             

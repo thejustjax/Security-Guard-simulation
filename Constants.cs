@@ -91,9 +91,9 @@ namespace Unit06
         public static string LEVEL_GROUP = "level";
         public static string LIVES_GROUP = "lives";
         public static string SCORE_GROUP = "score";
-        public static string LEVEL_FORMAT = "LEVEL: {0}";
+        public static string CLOCK_FORMAT = "TIME LEFT: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
-        public static string SCORE_FORMAT = "SCORE: {0}";
+        public static string BATTERY_FORMAT = "BATTERY: {0}%";
 
         // BALL
         public static string BALL_GROUP = "balls";
