@@ -39,6 +39,10 @@ namespace Security.Game.Directing
             {
                 PrepareGameOver(cast, script);
             }
+            else if (scene == Constants.OFFICE_NAME)
+            {
+                PrepareOffice(cast, script);
+            }
         }
 
         private void PrepareNewGame(Cast cast, Script script)
@@ -96,9 +100,6 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
-
-            //script.AddAction(Constants.INPUT, action);
-
             AddUpdateActions(script);    
             AddOutputActions(script);
         
@@ -228,7 +229,9 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
+    
         }
 
         private void AddUnloadActions(Script script)
