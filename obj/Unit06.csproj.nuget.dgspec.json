@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj": {}
+    "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj": {
+    "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+        "projectUniqueName": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
         "projectName": "Unit06",
-        "projectPath": "c:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+        "projectPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
         "packagesPath": "C:\\Users\\Crazy\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\obj\\",
+        "outputPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Crazy\\AppData\\Roaming\\NuGet\\NuGet.Config"
