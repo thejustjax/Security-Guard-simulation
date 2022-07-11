@@ -54,6 +54,11 @@ namespace Security
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
+        public static string OFFICE_BUTTON = "z";
+        public static string ROOM1_BUTTON = "b";
+        public static string ROOM2_BUTTON = "v";
+        public static string HWALL_BUTTON = "c";
+        public static string EWALL_BUTTON = "x";
 
         // SCENES
         public static string NEW_GAME = "new_game";
