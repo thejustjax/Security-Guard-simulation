@@ -68,7 +68,7 @@ namespace Security.Game.Directing
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
-            AddDialog(cast, Constants.PREP_TO_LAUNCH);
+            AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
 
@@ -83,7 +83,7 @@ namespace Security.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
-            AddDialog(cast, Constants.PREP_TO_LAUNCH);
+            AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
             
@@ -231,7 +231,7 @@ namespace Security.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new CheckOverAction());     
+        
         }
     }
 }
