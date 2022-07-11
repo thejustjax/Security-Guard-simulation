@@ -59,6 +59,12 @@ namespace Security
         public static string NEXT_LEVEL = "next_level";
         public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
+        public static string SCENE_START = "scene_start";
+        public static string ROOM_ONE = "room_one";
+        public static string ROOM_TWO = "room_two";
+        public static string ROOM_THREE = "room_three";
+        public static string ROOM_FOUR = "room_four";
+
 
         // LEVELS
         public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
