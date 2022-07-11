@@ -59,6 +59,7 @@ namespace Security
         public static string NEW_GAME = "new_game";
         public static string TRY_AGAIN = "try_again";
         public static string NEXT_LEVEL = "next_level";
+        public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
         public static string STAGE_NAME = "Stage";
         public static string ROOM1_NAME = "Party Room 1";
@@ -66,6 +67,11 @@ namespace Security
         public static string WHALL_NAME = "West Hallway";
         public static string EHALL_NAME = "East Hallway";
         public static string OFFICE_NAME = "Office";
+
+
+        // LEVELS
+        public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
+        public static int BASE_LEVELS = 5;
 
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
@@ -106,5 +112,7 @@ namespace Security
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
+        //ROOM NAMES
+
     }
 }

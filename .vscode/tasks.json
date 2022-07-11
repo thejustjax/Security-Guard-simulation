@@ -7,7 +7,11 @@
             "type": "process",
             "args": [
                 "build",
+<<<<<<< HEAD
+                "${workspaceFolder}/unit06-game.csproj",
+=======
                 "${workspaceFolder}/Unit06.csproj",
+>>>>>>> 1afad62d2a69b6f93294c53a089a1ab72dee7cb2
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +23,11 @@
             "type": "process",
             "args": [
                 "publish",
+<<<<<<< HEAD
+                "${workspaceFolder}/unit06-game.csproj",
+=======
                 "${workspaceFolder}/Unit06.csproj",
+>>>>>>> 1afad62d2a69b6f93294c53a089a1ab72dee7cb2
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +41,11 @@
                 "watch",
                 "run",
                 "--project",
+<<<<<<< HEAD
+                "${workspaceFolder}/unit06-game.csproj"
+=======
                 "${workspaceFolder}/Unit06.csproj"
+>>>>>>> 1afad62d2a69b6f93294c53a089a1ab72dee7cb2
             ],
             "problemMatcher": "$msCompile"
         }

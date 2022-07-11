@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Crazy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jaxmc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
