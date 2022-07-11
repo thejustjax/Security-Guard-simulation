@@ -34,7 +34,6 @@ namespace Unit06.Game.Scripting
                     Sound sound = new Sound(Constants.BOUNCE_SOUND);
                     audioService.PlaySound(sound);
                     int points = brick.GetPoints();
-                    stats.AddPoints(points);
                     cast.RemoveActor(Constants.BRICK_GROUP, brick);
                 }
             }

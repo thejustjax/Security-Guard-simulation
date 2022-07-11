@@ -163,7 +163,7 @@ namespace Unit06.Game.Directing
             cast.ClearActors(Constants.BRICK_GROUP);
 
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            int level = stats.GetLevel() % Constants.BASE_LEVELS;
+            int level = 1 % Constants.BASE_LEVELS;
             string filename = string.Format(Constants.LEVEL_FILE, level);
             List<List<string>> rows = LoadLevel(filename);
 

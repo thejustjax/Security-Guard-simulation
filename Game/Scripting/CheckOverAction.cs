@@ -17,7 +17,6 @@ namespace Unit06.Game.Scripting
             if (bricks.Count == 0)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-                stats.AddLevel();
                 callback.OnNext(Constants.NEXT_LEVEL);
             }
         }
