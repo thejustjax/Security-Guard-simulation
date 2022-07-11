@@ -1,9 +1,9 @@
 using System;
-using Unit06.Game.Casting;
-using Unit06.Game.Services;
+using Security.Game.Casting;
+using Security.Game.Services;
 
 
-namespace Unit06.Game.Scripting
+namespace Security.Game.Scripting
 {
     public class TimedChangeSceneAction : Action
     {

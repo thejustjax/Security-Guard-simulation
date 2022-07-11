@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Unit06.Game.Casting;
+using Security.Game.Casting;
 
 
-namespace Unit06
+namespace Security
 {
     public class Constants
     {

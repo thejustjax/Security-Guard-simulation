@@ -1,7 +1,7 @@
-using Unit06.Game.Casting;
+using Security.Game.Casting;
 
 
-namespace Unit06.Game.Services
+namespace Security.Game.Services
 {
     public interface PhysicsService
     {

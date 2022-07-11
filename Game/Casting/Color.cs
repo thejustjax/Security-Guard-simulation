@@ -1,4 +1,4 @@
-namespace Unit06.Game.Casting
+namespace Security.Game.Casting
 {
     /// <summary>
     /// A color.

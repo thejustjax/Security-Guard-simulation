@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit06.Game.Casting
+namespace Security.Game.Casting
 {
     /// <summary>
     /// 
@@ -17,7 +17,7 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Ball(Body body, Image image, bool debug = false) : base(debug)
+        public Robot(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
             this.image = image;
