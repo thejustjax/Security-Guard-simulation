@@ -54,6 +54,13 @@ namespace Security
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
+        public static string OFFICE_BUTTON = "z";
+        public static string ROOM1_BUTTON = "b";
+        public static string ROOM2_BUTTON = "v";
+        public static string HWALL_BUTTON = "c";
+        public static string EWALL_BUTTON = "x";
+
+
 
         // SCENES
         public static string NEW_GAME = "new_game";
@@ -106,5 +113,7 @@ namespace Security
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
+        //ROOM NAMES
+
     }
 }
