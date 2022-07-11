@@ -54,18 +54,12 @@ namespace Security
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
-        public static string OFFICE_BUTTON = "z";
-        public static string ROOM1_BUTTON = "b";
-        public static string ROOM2_BUTTON = "v";
-        public static string HWALL_BUTTON = "c";
-        public static string EWALL_BUTTON = "x";
-
-
 
         // SCENES
         public static string NEW_GAME = "new_game";
         public static string TRY_AGAIN = "try_again";
         public static string NEXT_LEVEL = "next_level";
+        public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
         public static string STAGE_NAME = "Stage";
         public static string ROOM1_NAME = "Party Room 1";
@@ -73,6 +67,11 @@ namespace Security
         public static string WHALL_NAME = "West Hallway";
         public static string EHALL_NAME = "East Hallway";
         public static string OFFICE_NAME = "Office";
+
+
+        // LEVELS
+        public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
+        public static int BASE_LEVELS = 5;
 
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
@@ -98,8 +97,8 @@ namespace Security
         //ROBOT
         public static string ROBOT_GROUP = "robot";
         public static string ROBOT_IMAGE = "Assets/Images/000.png";
-        public static int ROBOT_HEIGHT = 30;
-        public static int ROBOT_WIDTH;
+        public static int ROBOT_HEIGHT = 300;
+        public static int ROBOT_WIDTH = 300;
         // HUD
         public static int HUD_MARGIN = 15;
         public static string CLOCK_GROUP = "clock";
