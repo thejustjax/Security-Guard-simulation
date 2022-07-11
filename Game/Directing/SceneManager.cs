@@ -35,7 +35,6 @@ namespace Security.Game.Directing
             {
                 PrepareTryAgain(cast, script);
             }
-
             else if (scene == Constants.GAME_OVER)
             {
                 PrepareGameOver(cast, script);
@@ -48,6 +47,7 @@ namespace Security.Game.Directing
             AddClock(cast);
             AddBattery(cast);
             AddLives(cast);
+            AddRobot(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
             script.ClearAllActions();
@@ -91,7 +91,7 @@ namespace Security.Game.Directing
             AddOutputActions(script);
         }
 
-        private void PrepareInPlay(Cast cast, Script script)
+        private void PrepareOffice(Cast cast, Script script)
         {
             cast.ClearActors(Constants.DIALOG_GROUP);
 
