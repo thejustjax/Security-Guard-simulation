@@ -61,11 +61,12 @@ namespace Security
         public static string NEXT_LEVEL = "next_level";
         public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
-        public static string SCENE_START = "scene_start";
-        public static string ROOM_ONE = "room_one";
-        public static string ROOM_TWO = "room_two";
-        public static string ROOM_THREE = "room_three";
-        public static string ROOM_FOUR = "room_four";
+        public static string STAGE_NAME = "Stage";
+        public static string ROOM1_NAME = "Party Room 1";
+        public static string ROOM2_NAME = "Party Room 2";
+        public static string WHALL_NAME = "West Hallway";
+        public static string EHALL_NAME = "East Hallway";
+        public static string OFFICE_NAME = "Office";
 
 
         // LEVELS
@@ -112,11 +113,6 @@ namespace Security
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
         //ROOM NAMES
-        public static string STAGE_NAME = "Stage";
-        public static string ROOM1_NAME = "Party Room 1";
-        public static string ROOM2_NAME = "Party Room 2";
-        public static string WHALL_NAME = "West Hallway";
-        public static string EHALL_NAME = "East Hallway";
-        public static string OFFICE_NAME = "Office";
+
     }
 }
