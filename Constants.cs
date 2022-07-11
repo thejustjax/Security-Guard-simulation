@@ -88,9 +88,9 @@ namespace Security
 
         // HUD
         public static int HUD_MARGIN = 15;
-        public static string LEVEL_GROUP = "level";
+        public static string CLOCK_GROUP = "clock";
         public static string LIVES_GROUP = "lives";
-        public static string SCORE_GROUP = "score";
+        public static string BATTERY_GROUP = "battery";
         public static string CLOCK_FORMAT = "TIME LEFT: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
         public static string BATTERY_FORMAT = "BATTERY: {0}%";
