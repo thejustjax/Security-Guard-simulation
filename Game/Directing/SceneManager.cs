@@ -52,6 +52,7 @@ namespace Security.Game.Directing
             AddBattery(cast);
             AddLives(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
+            AddRobot(cast);
 
             script.ClearAllActions();
             AddInitActions(script);
@@ -72,7 +73,7 @@ namespace Security.Game.Directing
 
             script.ClearAllActions();
 
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.OFFICE_NAME, 2, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
 
             AddOutputActions(script);
@@ -87,7 +88,7 @@ namespace Security.Game.Directing
 
             script.ClearAllActions();
             
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.OFFICE_NAME, 2, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
             
             AddUpdateActions(script);
@@ -124,7 +125,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.ROBOT_GROUP);
         
             int x = Constants.CENTER_X - Constants.ROBOT_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - - Constants.ROBOT_HEIGHT;
+            int y = Constants.SCREEN_HEIGHT - Constants.ROBOT_HEIGHT;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.ROBOT_WIDTH, Constants.ROBOT_HEIGHT);
