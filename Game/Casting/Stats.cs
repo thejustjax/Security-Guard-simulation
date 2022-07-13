@@ -23,9 +23,9 @@ namespace Security.Game.Casting
         /// <summary>
         /// Adds one level.
         /// </summary>
-        public void RemoveTime(int time)
+        public void SetTime(int time)
         {
-            clock -= time;
+            clock = time;
         }
 
         /// <summary>

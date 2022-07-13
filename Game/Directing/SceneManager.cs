@@ -319,7 +319,8 @@ namespace Security.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new TimeTracker(1, DateTime.Now));     
+               
+                script.AddAction(Constants.UPDATE, new TimeTracker(1, DateTime.Now));     
             script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }
     }
