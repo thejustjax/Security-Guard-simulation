@@ -104,6 +104,12 @@ namespace Security
         public static string ROBOT_IMAGE = "Assets/Images/000.png";
         public static int ROBOT_HEIGHT = 200;
         public static int ROBOT_WIDTH = 200;
+
+        // Doors
+        public static string WEST_DOOR_CLOSED_IMAGE = "Assets/Images/WestDoor_Closed.png";
+        public static string WEST_DOOR_OPEN_IMAGE = "Assets/Images/WestDoor_Open.png";
+        public static string EAST_DOOR_CLOSED_IMAGE = "Assets/Images/EastDoor_Closed.png";
+        public static string EAST_DOOR_OPEN_IMAGE = "Assets/Image/EastDoor_Open.png";
         // HUD
         public static int HUD_MARGIN = 15;
         public static string CLOCK_GROUP = "clock";
