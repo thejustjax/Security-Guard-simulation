@@ -107,20 +107,36 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, sa);
         }
 
-        private void PreparePartyRoom1(){
-
+        private void PreparePartyRoom1(Casting cast, Script script){
+            CurrentScene = Constants.OFFICE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
         }
 
-        private void PreparePartyRoom2(){
-
+        private void PreparePartyRoom2(Casting cast, Script script){
+            CurrentScene = Constants.OFFICE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
         }
 
-        private void PrepareWHall(){
-
+        private void PrepareWHall(Casting cast, Script script){
+            CurrentScene = Constants.OFFICE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
         }
 
-        private void PrepareEHall(){
-
+        private void PrepareEHall(Casting cast, Script script){
+            CurrentScene = Constants.OFFICE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
         }
 
         private void PrepareOffice(Cast cast, Script script)
