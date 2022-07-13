@@ -14,7 +14,7 @@ namespace Security.Game.Casting
         private Body body;
         private Image image;
 
-        private string location;
+        private string location = Constants.OFFICE_NAME;
         /// <summary>
         /// Constructs a new instance of Robot.
         /// </summary>

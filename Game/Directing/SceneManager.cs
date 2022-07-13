@@ -16,6 +16,7 @@ namespace Security.Game.Directing
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+        public string CurrentScene;
 
         public SceneManager()
         {
@@ -47,6 +48,7 @@ namespace Security.Game.Directing
 
         private void PrepareNewGame(Cast cast, Script script)
         {
+            CurrentScene = Constants.NEW_GAME;
             AddStats(cast);
             AddClock(cast);
             AddBattery(cast);
@@ -61,7 +63,7 @@ namespace Security.Game.Directing
             ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.NEXT_LEVEL);
             script.AddAction(Constants.INPUT, a);
 
-            AddOutputActions(script);
+            AddOutputActions(cast, script);
             AddUnloadActions(script);
             AddReleaseActions(script);
         }
@@ -69,6 +71,7 @@ namespace Security.Game.Directing
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
+            CurrentScene = Constants.NEXT_LEVEL;
             AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
@@ -76,7 +79,7 @@ namespace Security.Game.Directing
             TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.OFFICE_NAME, 2, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
 
-            AddOutputActions(script);
+            AddOutputActions(cast, script);
 
             PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
             script.AddAction(Constants.OUTPUT, sa);
@@ -84,6 +87,7 @@ namespace Security.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
+            CurrentScene = Constants.TRY_AGAIN;
             AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
@@ -92,29 +96,30 @@ namespace Security.Game.Directing
             script.AddAction(Constants.INPUT, ta);
             
             AddUpdateActions(script);
-            AddOutputActions(script);
+            AddOutputActions(cast, script);
         }
 
         private void PrepareOffice(Cast cast, Script script)
         {
+            CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
             AddUpdateActions(script);    
-            AddOutputActions(script);
+            AddOutputActions(cast, script);
         
         }
 
         private void PrepareGameOver(Cast cast, Script script)
         {
+           
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
             script.ClearAllActions();
 
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 20, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
-
-            AddOutputActions(script);
+            AddOutputActions(cast, script);
         }
 
         // -----------------------------------------------------------------------------------------
@@ -125,7 +130,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.ROBOT_GROUP);
         
             int x = Constants.CENTER_X - Constants.ROBOT_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.ROBOT_HEIGHT;
+            int y = Constants.CENTER_Y - Constants.ROBOT_HEIGHT / 2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.ROBOT_WIDTH, Constants.ROBOT_HEIGHT);
@@ -224,13 +229,16 @@ namespace Security.Game.Directing
             script.AddAction(Constants.LOAD, new LoadAssetsAction(AudioService, VideoService));
         }
 
-        private void AddOutputActions(Script script)
+        private void AddOutputActions(Cast cast, Script script)
         {
+            Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
+            if (CurrentScene == robot.GetLocation()){
+              script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
+            }
     
         }
 
@@ -247,7 +255,8 @@ namespace Security.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-        
+            script.AddAction(Constants.UPDATE, new TimeTracker(1, DateTime.Now));     
+            script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }
     }
 }
