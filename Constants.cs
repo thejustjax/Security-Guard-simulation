@@ -75,7 +75,7 @@ namespace Security
         public static string EHALL_NAME = "East Hallway";
         public static string OFFICE_NAME = "Office";
 
-
+        public static string GAME_WIN = "game_win";
         // LEVELS
         public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
         public static int BASE_LEVELS = 5;

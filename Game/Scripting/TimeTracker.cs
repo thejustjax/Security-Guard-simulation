@@ -11,9 +11,9 @@ namespace Security.Game.Scripting
         private DateTime start;
 
         
-        public TimeTracker(double delay, DateTime start)
+        public TimeTracker(DateTime start)
         {
-            this.delay = delay;
+
             this.start = start;
         }
 
@@ -22,9 +22,9 @@ namespace Security.Game.Scripting
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             DateTime currentTime = DateTime.Now;
             TimeSpan elapsedTime = currentTime.Subtract(start);
-            if (elapsedTime.Seconds > delay)
-            {
                 stats.SetTime(120-elapsedTime.Seconds);
+            if (stats.GetClock() == 0){
+                callback.OnNext(Constants.GAME_WIN);
             }
         }
     }
