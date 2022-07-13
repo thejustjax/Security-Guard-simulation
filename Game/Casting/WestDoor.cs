@@ -1,26 +1,28 @@
 using System;
+using System.Collections.Generic;
+
 
 namespace Security.Game.Casting
 {
     /// <summary>
     /// 
     /// </summary>
-
-    public class Door : Actor
+    public class WestDoor : Actor
     {
-            private Body body;
-            private Image image;
+        private static Random random = new Random();
 
-            private int doorposition = 1;
+        private Body body;
+        private Image image;
+
+        private string location;
         /// <summary>
         /// Constructs a new instance of Robot.
         /// </summary>
-
-        ///public Door(Body body, Image image, bool debug = false) : base(debug)
-        ///{
-        ///    this.body = body;
-        ///    this.image = image;
-        ///}
+        public WestDoor(Body body, Image image, bool debug = false) : base(debug)
+        {
+            this.body = body;
+            this.image = image;
+        }
         
         /// <summary>
         /// Gets the body.
@@ -40,6 +42,16 @@ namespace Security.Game.Casting
             return image;
         }
 
+        public string GetLocation()
+        {
+            return location;
+        }
+
+        public void ChangeLocation(string newlocation)
+        {
+            location = newlocation;
+        }
+
         public void ChangePosition(int doorposition)
         {
             if (doorposition == 1){
@@ -49,7 +61,5 @@ namespace Security.Game.Casting
                 doorposition = 1;
             }
         }
-
-        ///public int CurrentPosition()
     }
 }
