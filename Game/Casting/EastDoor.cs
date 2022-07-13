@@ -4,9 +4,7 @@ using System.Collections.Generic;
 
 namespace Security.Game.Casting
 {
-    /// <summary>
-    /// 
-    /// </summary>
+
     public class EastDoor : Actor
     {
         private static Random random = new Random();
@@ -15,28 +13,18 @@ namespace Security.Game.Casting
         private Image image;
 
         private string location;
-        /// <summary>
-        /// Constructs a new instance of Robot.
-        /// </summary>
+
         public EastDoor(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
             this.image = image;
         }
         
-        /// <summary>
-        /// Gets the body.
-        /// </summary>
-        /// <returns>The body.</returns>
         public Body GetBody()
         {
             return body;
         }
 
-        /// <summary>
-        /// Gets the image.
-        /// </summary>
-        /// <returns>The image.</returns>
         public Image GetImage()
         {
             return image;

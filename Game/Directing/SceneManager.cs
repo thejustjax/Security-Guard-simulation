@@ -55,6 +55,8 @@ namespace Security.Game.Directing
             AddLives(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
             AddRobot(cast);
+            AddEastDoor(cast);
+            AddWestDoor(cast);
 
             script.ClearAllActions();
             AddInitActions(script);
@@ -141,6 +143,16 @@ namespace Security.Game.Directing
             Robot robot = new Robot(body, image, false);
         
             cast.AddActor(Constants.ROBOT_GROUP, robot);
+        }
+
+        private void AddEastDoor(Cast cast)
+        {
+
+        }
+
+        private void AddWestDoor(Cast cast)
+        {
+            
         }
 
         private void AddDialog(Cast cast, string message)
