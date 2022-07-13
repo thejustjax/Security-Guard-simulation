@@ -24,22 +24,22 @@ namespace Security.Game.Scripting
 
             if (keyboardService.IsKeyPressed(Constants.OFFICE_BUTTON))
             {
-                
+                callback.OnNext(nextScene);
             }
 
             if (keyboardService.IsKeyPressed(Constants.ROOM1_BUTTON))
             {
-
+                callback.OnNext(nextScene);
             }
 
             if (keyboardService.IsKeyPressed(Constants.ROOM2_BUTTON))
             {
-
+                callback.OnNext(nextScene);
             }
 
             if (keyboardService.IsKeyPressed(Constants.HWALL_BUTTON))
             {
-
+                callback.OnNext(nextScene);
             }
         }
         
