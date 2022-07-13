@@ -59,6 +59,8 @@ namespace Security
         public static string ROOM2_BUTTON = "v";
         public static string HWALL_BUTTON = "c";
         public static string EWALL_BUTTON = "x";
+        public static string WESTDOOR_BUTTON = "g";
+        public static string EASTDOOR_BUTTON = "h";
 
         // SCENES
         public static string NEW_GAME = "new_game";
@@ -104,6 +106,18 @@ namespace Security
         public static string ROBOT_IMAGE = "Assets/Images/000.png";
         public static int ROBOT_HEIGHT = 200;
         public static int ROBOT_WIDTH = 200;
+
+        // Doors
+        public static string WESTDOOR_GROUP = "westdoor";
+        public static string WESTDOOR_CLOSED_IMAGE = "Assets/Images/WestDoor_Closed.png";
+        public static string WESTDOOR_OPEN_IMAGE = "Assets/Images/WestDoor_Open.png";
+        public static int WESTDOOR_HEIGHT = 200;
+        public static int WESTDOOR_WIDTH = 200;
+        public static string EASTDOOR_GROUP = "eastdoor";
+        public static string EASTDOOR_CLOSED_IMAGE = "Assets/Images/EastDoor_Closed.png";
+        public static string EASTDOOR_OPEN_IMAGE = "Assets/Image/EastDoor_Open.png";
+        public static int EASTDOOR_HEIGHT = 200;
+        public static int EASTDOOR_WIDTH = 200;
         // HUD
         public static int HUD_MARGIN = 15;
         public static string CLOCK_GROUP = "clock";
