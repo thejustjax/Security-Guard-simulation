@@ -116,6 +116,7 @@ namespace Security.Game.Directing
             script.ClearAllActions();
             AddUpdateActions(script);    
             AddOutputActions(cast, script);
+            ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.ROOM1_NAME);
         }
 
         private void PreparePartyRoom2(Cast cast, Script script){
