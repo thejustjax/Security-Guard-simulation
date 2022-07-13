@@ -102,8 +102,8 @@ namespace Security
         //ROBOT
         public static string ROBOT_GROUP = "robot";
         public static string ROBOT_IMAGE = "Assets/Images/000.png";
-        public static int ROBOT_HEIGHT = 300;
-        public static int ROBOT_WIDTH = 300;
+        public static int ROBOT_HEIGHT = 200;
+        public static int ROBOT_WIDTH = 200;
         // HUD
         public static int HUD_MARGIN = 15;
         public static string CLOCK_GROUP = "clock";

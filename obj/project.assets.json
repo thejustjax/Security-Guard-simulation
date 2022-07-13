@@ -116,11 +116,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Brenn\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Crazy\\.nuget\\packages\\": {}
+>>>>>>> 282dfbec7f893efadabc771f1ac7e28d4e513a94
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Brenn\\OneDrive\\Spring 2022\\CSE - 210\\TheGame\\Security-Guard-simulation\\Unit06.csproj",
       "projectName": "Unit06",
       "projectPath": "C:\\Users\\Brenn\\OneDrive\\Spring 2022\\CSE - 210\\TheGame\\Security-Guard-simulation\\Unit06.csproj",
@@ -130,6 +135,16 @@
       "configFilePaths": [
         "C:\\Users\\Brenn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+      "projectName": "Unit06",
+      "projectPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+      "packagesPath": "C:\\Users\\Crazy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Crazy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 282dfbec7f893efadabc771f1ac7e28d4e513a94
       ],
       "originalTargetFrameworks": [
         "net6.0"
