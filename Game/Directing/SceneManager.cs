@@ -123,8 +123,14 @@ namespace Security.Game.Directing
 
         }
 
-        private void PrepareOffice(){
-
+        private void PrepareOffice(Cast cast, Script script)
+        {
+            CurrentScene = Constants.OFFICE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
+        
         }
 
 
