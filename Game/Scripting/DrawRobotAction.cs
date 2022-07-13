@@ -1,5 +1,6 @@
 using Security.Game.Casting;
 using Security.Game.Services;
+using Security.Game.Directing;
 
 namespace Security.Game.Scripting
 {
@@ -16,7 +17,6 @@ namespace Security.Game.Scripting
         {
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             Body body = robot.GetBody();
-
             if (robot.IsDebug())
             {
                 Rectangle rectangle = body.GetRectangle();
