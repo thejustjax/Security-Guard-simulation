@@ -151,16 +151,6 @@ namespace Security.Game.Directing
             AddOutputActions(cast, script);
         }
 
-        private void PrepareOffice(Cast cast, Script script)
-        {
-            CurrentScene = Constants.OFFICE_NAME;
-            cast.ClearActors(Constants.DIALOG_GROUP);
-            script.ClearAllActions();
-            AddUpdateActions(script);    
-            AddOutputActions(cast, script);
-        
-        }
-
         private void PrepareGameOver(Cast cast, Script script)
         {
             AddDialog(cast, Constants.WAS_GOOD_GAME);
