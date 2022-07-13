@@ -24,7 +24,7 @@ namespace Security.Game.Scripting
             TimeSpan elapsedTime = currentTime.Subtract(start);
             if (elapsedTime.Seconds > delay)
             {
-                stats.RemoveTime(1);
+                stats.RemoveTime(elapsedTime.Seconds);
             }
         }
     }

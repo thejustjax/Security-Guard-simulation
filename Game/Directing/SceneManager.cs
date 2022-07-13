@@ -107,7 +107,7 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, sa);
         }
 
-        private void PreparePartyRoom1(Casting cast, Script script){
+        private void PreparePartyRoom1(Cast cast, Script script){
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
@@ -115,7 +115,7 @@ namespace Security.Game.Directing
             AddOutputActions(cast, script);
         }
 
-        private void PreparePartyRoom2(Casting cast, Script script){
+        private void PreparePartyRoom2(Cast cast, Script script){
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
@@ -123,7 +123,7 @@ namespace Security.Game.Directing
             AddOutputActions(cast, script);
         }
 
-        private void PrepareWHall(Casting cast, Script script){
+        private void PrepareWHall(Cast cast, Script script){
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
@@ -131,7 +131,7 @@ namespace Security.Game.Directing
             AddOutputActions(cast, script);
         }
 
-        private void PrepareEHall(Casting cast, Script script){
+        private void PrepareEHall(Cast cast, Script script){
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
