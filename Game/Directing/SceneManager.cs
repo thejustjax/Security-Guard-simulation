@@ -47,8 +47,28 @@ namespace Security.Game.Directing
             {
                 PrepareOffice(cast, script);
             }
+            else if (scene == Constants.OFFICE_NAME){
+                PrepareOffice(cast, script);
+            }
+            else if (scene == Constants.ROOM1_NAME){
+                PreparePartyRoom1(cast, script);
+            }
+            else if (scene == Constants.ROOM2_NAME){
+                PreparePartyRoom2(cast, script);
+            }
+            else if (scene == Constants.WHALL_NAME){
+                PrepareWHall(cast,script);
+            }
+            else if (scene == Constants.EHALL_NAME){
+                PrepareEHall(cast, script);
+            }
         }
 
+        // public static string ROOM1_NAME = "Party Room 1";
+        // public static string ROOM2_NAME = "Party Room 2";
+        // public static string WHALL_NAME = "West Hallway";
+        // public static string EHALL_NAME = "East Hallway";
+        // public static string OFFICE_NAME = "Office";
         private void PrepareNewGame(Cast cast, Script script)
         {
             AddStats(cast);
@@ -84,6 +104,30 @@ namespace Security.Game.Directing
             PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
             script.AddAction(Constants.OUTPUT, sa);
         }
+
+        private void PreparePartyRoom1(){
+
+        }
+
+        private void PreparePartyRoom2(){
+
+        }
+
+        private void PrepareWHall(){
+
+        }
+
+        private void PrepareEHall(){
+
+        }
+
+        private void PrepareOffice(){
+
+        }
+
+
+
+        
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
