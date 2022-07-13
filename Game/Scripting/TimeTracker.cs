@@ -24,7 +24,7 @@ namespace Security.Game.Scripting
             TimeSpan elapsedTime = currentTime.Subtract(start);
             if (elapsedTime.Seconds > delay)
             {
-                stats.RemoveBattery(1);
+                stats.RemoveTime(1);
             }
         }
     }
