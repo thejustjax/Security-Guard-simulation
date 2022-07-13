@@ -116,19 +116,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaxmc\\.nuget\\packages\\": {}
+    "C:\\Users\\Crazy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\CSE 210\\cse210-student-developer-csharp-main\\unit06-game\\unit06-game.csproj",
-      "projectName": "unit06-game",
-      "projectPath": "c:\\CSE 210\\cse210-student-developer-csharp-main\\unit06-game\\unit06-game.csproj",
-      "packagesPath": "C:\\Users\\jaxmc\\.nuget\\packages\\",
-      "outputPath": "c:\\CSE 210\\cse210-student-developer-csharp-main\\unit06-game\\obj\\",
+      "projectUniqueName": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+      "projectName": "Unit06",
+      "projectPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\Unit06.csproj",
+      "packagesPath": "C:\\Users\\Crazy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Crazy\\OneDrive\\Documents\\CSE 210\\SecurityGuard\\Security-Guard-simulation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jaxmc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Crazy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
