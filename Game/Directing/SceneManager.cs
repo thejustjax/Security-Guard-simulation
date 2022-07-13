@@ -202,8 +202,8 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.EASTDOOR_GROUP);
         
-            int x = 0;
-            int y = 0;
+            int x = Constants.CENTER_X - Constants.EASTDOOR_WIDTH / 2;;
+            int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.EASTDOOR_WIDTH, Constants.EASTDOOR_HEIGHT);
@@ -220,8 +220,8 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.WESTDOOR_GROUP);
         
-            int x = 0;
-            int y = 0;
+            int x = Constants.CENTER_X - Constants.WESTDOOR_WIDTH / 2;;
+            int y = Constants.CENTER_Y - Constants.WESTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.WESTDOOR_WIDTH, Constants.WESTDOOR_HEIGHT);
@@ -322,6 +322,8 @@ namespace Security.Game.Directing
 
         private void AddOutputActions(Cast cast, Script script)
         {
+            WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
+            EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
