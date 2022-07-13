@@ -147,7 +147,6 @@ namespace Security.Game.Directing
         {
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
-
             script.ClearAllActions();
             AddUpdateActions(script);    
             AddOutputActions(cast, script);
@@ -156,12 +155,10 @@ namespace Security.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
-           
             AddDialog(cast, Constants.WAS_GOOD_GAME);
-
             script.ClearAllActions();
 
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 20, DateTime.Now);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
             AddOutputActions(cast, script);
         }
@@ -192,7 +189,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             Text text = new Text(message, Constants.FONT_FILE, Constants.FONT_SIZE, 
-                Constants.ALIGN_CENTER, Constants.WHITE);
+                Constants.ALIGN_CENTER, Constants.PURPLE);
             Point position = new Point(Constants.CENTER_X, Constants.CENTER_Y);
 
             Label label = new Label(text, position);
@@ -279,11 +276,10 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
             if (CurrentScene == robot.GetLocation()){
               script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
             }
-    
+            script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
         }
 
         private void AddUnloadActions(Script script)
