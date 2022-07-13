@@ -13,7 +13,7 @@ namespace Security.Game.Scripting
             Body body = robot.GetBody();
             Random random = new Random();
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            if((stats.GetClock() % Constants.MOVE_TIME) == 0 || DateTime.Now.Millisecond == 0){
+            if((stats.GetClock() % Constants.MOVE_TIME) == 0 && DateTime.Now.Millisecond < 15){
                 if(random.Next(1,21) <= Constants.ROBOT_DIFFICULTY){
                     if (robot.GetLocation() == Constants.STAGE_NAME){
                             robot.ChangeLocation(Constants.ROOM1_NAME);

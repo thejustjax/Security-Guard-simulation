@@ -59,6 +59,9 @@ namespace Security.Game.Directing
             else if (scene == Constants.EHALL_NAME){
                 PrepareEHall(cast, script);
             }
+            else if (scene == Constants.GAME_WIN){
+                PrepareGameWin(cast, script);
+            }
         }
 
         // public static string ROOM1_NAME = "Party Room 1";
@@ -168,6 +171,16 @@ namespace Security.Game.Directing
         }
 
         private void PrepareGameOver(Cast cast, Script script)
+        {
+            AddRobot(cast);
+            AddDialog(cast, Constants.WAS_GOOD_GAME);
+            script.ClearAllActions();
+
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
+            script.AddAction(Constants.INPUT, ta);
+            AddOutputActions(cast, script);
+        }
+        private void PrepareGameWin(Cast cast, Script script)
         {
             AddDialog(cast, Constants.WAS_GOOD_GAME);
             script.ClearAllActions();
@@ -351,7 +364,7 @@ namespace Security.Game.Directing
         private void AddUpdateActions(Script script)
         {
                
-                script.AddAction(Constants.UPDATE, new TimeTracker(1, DateTime.Now));     
+                script.AddAction(Constants.UPDATE, new TimeTracker(DateTime.Now));     
             script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }
     }
