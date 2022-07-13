@@ -216,7 +216,7 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.EASTDOOR_GROUP);
         
-            int x = Constants.CENTER_X - Constants.EASTDOOR_WIDTH / 2;;
+            int x = Constants.SCREEN_WIDTH - Constants.EASTDOOR_WIDTH;
             int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;;
         
             Point position = new Point(x, y);
@@ -234,7 +234,7 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.WESTDOOR_GROUP);
         
-            int x = Constants.CENTER_X - Constants.WESTDOOR_WIDTH / 2;;
+            int x = Constants.WESTDOOR_WIDTH / 2;
             int y = Constants.CENTER_Y - Constants.WESTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
@@ -342,6 +342,9 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
+            if (CurrentScene == Constants.OFFICE_NAME){
+                script.AddAction(Constants.OUTPUT, new DrawDoorAction(VideoService));
+            }
             if (CurrentScene == robot.GetLocation()){
               script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
             }
