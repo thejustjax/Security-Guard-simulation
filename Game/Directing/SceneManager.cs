@@ -349,6 +349,7 @@ namespace Security.Game.Directing
               script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
             }
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
+            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
         }
 
         private void AddUnloadActions(Script script)
@@ -365,7 +366,7 @@ namespace Security.Game.Directing
         private void AddUpdateActions(Script script)
         {
                
-                script.AddAction(Constants.UPDATE, new TimeTracker(DateTime.Now));     
+            script.AddAction(Constants.UPDATE, new TimeTracker(DateTime.Now));     
             script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }
     }

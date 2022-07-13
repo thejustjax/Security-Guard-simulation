@@ -57,7 +57,7 @@ namespace Security
         public static string OFFICE_BUTTON = "z";
         public static string ROOM1_BUTTON = "b";
         public static string ROOM2_BUTTON = "v";
-        public static string HWALL_BUTTON = "c";
+        public static string WHALL_BUTTON = "c";
         public static string EWALL_BUTTON = "x";
         public static string WESTDOOR_BUTTON = "g";
         public static string EASTDOOR_BUTTON = "h";

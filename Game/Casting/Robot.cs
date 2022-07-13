@@ -13,6 +13,7 @@ namespace Security.Game.Casting
 
         private Body body;
         private Image image;
+        public List<int> moveList = new List<int>();
 
         private string location = Constants.STAGE_NAME;
         /// <summary>
