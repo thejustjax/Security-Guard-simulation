@@ -34,7 +34,7 @@ namespace Security.Game.Scripting
             {
                 callback.OnNext(Constants.WHALL_NAME);
             }
-            if (keyboardService.IsKeyPressed(Constants.EHALL_NAME))
+            if (keyboardService.IsKeyPressed(Constants.EHALL_BUTTON))
             {
                 callback.OnNext(Constants.EHALL_NAME);
             }

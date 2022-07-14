@@ -16,6 +16,8 @@ namespace Security
         // DIFFICULTY
         public static int ROBOT_DIFFICULTY = 15;
         public static int MOVE_TIME = 5;
+
+        public static int MAX_TIME = 120;
         // SCREEN
         public static int SCREEN_WIDTH = 1040;
         public static int SCREEN_HEIGHT = 680;
@@ -58,7 +60,7 @@ namespace Security
         public static string ROOM1_BUTTON = "b";
         public static string ROOM2_BUTTON = "v";
         public static string WHALL_BUTTON = "c";
-        public static string EWALL_BUTTON = "x";
+        public static string EHALL_BUTTON = "x";
         public static string WESTDOOR_BUTTON = "g";
         public static string EASTDOOR_BUTTON = "h";
 
@@ -99,8 +101,6 @@ namespace Security
 
         // STATS
         public static string STATS_GROUP = "stats";
-        public static int DEFAULT_LIVES = 3;
-        public static int MAXIMUM_LIVES = 5;
         //ROBOT
         public static string ROBOT_GROUP = "robot";
         public static string ROBOT_IMAGE = "Assets/Images/000.png";
