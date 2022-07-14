@@ -7,6 +7,9 @@ namespace Security.Game.Scripting
 {
     public class RobotMoveDecision : Action
     {
+        public RobotMoveDecision(){
+            
+        }
         
         public void Execute(Cast cast, Script script, ActionCallback callback){
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);

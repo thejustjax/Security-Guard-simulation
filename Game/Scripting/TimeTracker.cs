@@ -7,22 +7,20 @@ namespace Security.Game.Scripting
 {
     public class TimeTracker : Action
     {   
-        private double delay;
-        private DateTime start;
-
-        
-        public TimeTracker(DateTime start)
+        public TimeTracker()
         {
-
-            this.start = start;
+            
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             DateTime currentTime = DateTime.Now;
-            TimeSpan elapsedTime = currentTime.Subtract(start);
-                stats.SetTime(120-elapsedTime.Seconds);
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            if(stats.GetStart() == new DateTime()){
+                stats.SetStart(DateTime.Now);
+            }
+            TimeSpan elapsedTime = currentTime.Subtract(stats.GetStart());
+            stats.SetTime(Constants.MAX_TIME-elapsedTime.Seconds);
             if (stats.GetClock() == 0){
                 callback.OnNext(Constants.GAME_WIN);
             }

@@ -1,3 +1,5 @@
+using System;
+
 namespace Security.Game.Casting
 {
     /// <summary>
@@ -9,6 +11,7 @@ namespace Security.Game.Casting
         private int lives;
         private int battery;
 
+        private DateTime start = new DateTime();
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
@@ -82,6 +85,12 @@ namespace Security.Game.Casting
             {
                 lives = 0;
             }
+        }
+        public DateTime GetStart(){
+            return start;
+        }
+        public void SetStart(DateTime newstart){
+            start = newstart;
         }
         
     }
