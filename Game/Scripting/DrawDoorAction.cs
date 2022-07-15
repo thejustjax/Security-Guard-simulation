@@ -8,8 +8,8 @@ namespace Security.Game.Scripting
     {
         private VideoService videoService;
         private KeyboardService keyboardService;
-        private int Westdoor_Value;
-        private int Eastdoor_Value;
+        private int Westdoor_Value = 1;
+        private int Eastdoor_Value = 1;
         
         public DrawDoorAction(VideoService videoService)
         {
@@ -18,7 +18,7 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (keyboardService.IsKeyDown(Constants.WESTDOOR_BUTTON))
+            if (Westdoor_Value == 1)
             {
                 WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
                 Body westdoorbody = westdoor.GetBody();
@@ -34,12 +34,23 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(westdoorimage, westdoorposition);
             }
 
-            else if (keyboardService.IsKeyUp(Constants.WESTDOOR_BUTTON))
+            else if (Westdoor_Value == 0)
             {
-
+                OpenWestDoor openwestdoor = (OpenWestDoor)cast.GetFirstActor(Constants.OPENWESTDOOR_GROUP);
+                Body openwestdoorbody = openwestdoor.GetBody();
+                if (openwestdoor.IsDebug())
+                {
+                    Rectangle openwestdoorrectangle = openwestdoorbody.GetRectangle();
+                    Point openwestdoorsize = openwestdoorrectangle.GetSize();
+                    Point openwestdoorpos = openwestdoorrectangle.GetPosition();
+                    videoService.DrawRectangle(openwestdoorsize, openwestdoorpos, Constants.PURPLE, false);
+                }
+                Image openwestdoorimage = openwestdoor.GetImage();
+                Point openwestdoorposition = openwestdoorbody.GetPosition();
+                videoService.DrawImage(openwestdoorimage, openwestdoorposition);
             }
 
-            if (keyboardService.IsKeyDown(Constants.EASTDOOR_BUTTON))
+            if (Eastdoor_Value == 1)
             {
                 EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
                 Body eastdoorbody = eastdoor.GetBody();
@@ -57,9 +68,21 @@ namespace Security.Game.Scripting
                 
             }
 
-            else if (keyboardService.IsKeyUp(Constants.EASTDOOR_BUTTON))
+            else if (Eastdoor_Value == 0)
             {
-                
+                OpenEastDoor openeastdoor = (OpenEastDoor)cast.GetFirstActor(Constants.OPENEASTDOOR_GROUP);
+                Body openeastdoorbody = openeastdoor.GetBody();
+                if (openeastdoor.IsDebug())
+                {
+                    Rectangle openeastdoorrectangle = openeastdoorbody.GetRectangle();
+                    Point openeastdoorsize = openeastdoorrectangle.GetSize();
+                    Point openeastdoorpos = openeastdoorrectangle.GetPosition();
+                    videoService.DrawRectangle(openeastdoorsize, openeastdoorpos, Constants.PURPLE, false);
+                }
+
+                Image openeastdoorimage = openeastdoor.GetImage();
+                Point openeastdoorposition = openeastdoorbody.GetPosition();
+                videoService.DrawImage(openeastdoorimage, openeastdoorposition);
             }
 
             ///EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);

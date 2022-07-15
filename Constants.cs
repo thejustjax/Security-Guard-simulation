@@ -110,11 +110,13 @@ namespace Security
         // Doors
         public static string WESTDOOR_GROUP = "westdoor";
         public static string WESTDOOR_CLOSED_IMAGE = "Assets/Images/WestDoor_Closed.png";
+        public static string OPENWESTDOOR_GROUP = "openwestdoor";
         public static string WESTDOOR_OPEN_IMAGE = "Assets/Images/WestDoor_Open.png";
         public static int WESTDOOR_HEIGHT = 200;
         public static int WESTDOOR_WIDTH = 200;
         public static string EASTDOOR_GROUP = "eastdoor";
         public static string EASTDOOR_CLOSED_IMAGE = "Assets/Images/EastDoor_Closed.png";
+        public static string OPENEASTDOOR_GROUP = "openeastdoor";
         public static string EASTDOOR_OPEN_IMAGE = "Assets/Image/EastDoor_Open.png";
         public static int EASTDOOR_HEIGHT = 200;
         public static int EASTDOOR_WIDTH = 200;
