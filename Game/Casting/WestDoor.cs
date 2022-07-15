@@ -51,15 +51,5 @@ namespace Security.Game.Casting
         {
             location = newlocation;
         }
-
-        public void ChangePosition(int doorposition)
-        {
-            if (doorposition == 1){
-                doorposition = 0;
-            }
-            else if(doorposition == 0){
-                doorposition = 1;
-            }
-        }
     }
 }

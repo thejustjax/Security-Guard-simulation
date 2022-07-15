@@ -8,6 +8,8 @@ namespace Security.Game.Scripting
     {
         private VideoService videoService;
         private KeyboardService keyboardService;
+        private int Westdoor_Value;
+        private int Eastdoor_Value;
         
         public DrawDoorAction(VideoService videoService)
         {
@@ -16,7 +18,7 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (keyboardService.IsKeyPressed(Constants.WESTDOOR_BUTTON))
+            if (keyboardService.IsKeyDown(Constants.WESTDOOR_BUTTON))
             {
                 WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
                 Body westdoorbody = westdoor.GetBody();
@@ -32,7 +34,12 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(westdoorimage, westdoorposition);
             }
 
-            if (keyboardService.IsKeyPressed(Constants.EASTDOOR_BUTTON))
+            else if (keyboardService.IsKeyUp(Constants.WESTDOOR_BUTTON))
+            {
+
+            }
+
+            if (keyboardService.IsKeyDown(Constants.EASTDOOR_BUTTON))
             {
                 EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
                 Body eastdoorbody = eastdoor.GetBody();
@@ -47,6 +54,11 @@ namespace Security.Game.Scripting
                 Image eastdoorimage = eastdoor.GetImage();
                 Point eastdoorposition = eastdoorbody.GetPosition();
                 videoService.DrawImage(eastdoorimage, eastdoorposition);
+                
+            }
+
+            else if (keyboardService.IsKeyUp(Constants.EASTDOOR_BUTTON))
+            {
                 
             }
 
