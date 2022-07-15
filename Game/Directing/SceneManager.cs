@@ -190,6 +190,8 @@ namespace Security.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            stats.SetScene(Constants.GAME_OVER);
             AddRobot(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
             script.ClearAllActions();
@@ -200,7 +202,9 @@ namespace Security.Game.Directing
         }
         private void PrepareGameWin(Cast cast, Script script)
         {
-            AddDialog(cast, Constants.WAS_GOOD_GAME);
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            stats.SetScene(Constants.GAME_WIN);
+            AddDialog(cast, Constants.YOU_WIN);
             script.ClearAllActions();
 
             TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
@@ -398,7 +402,11 @@ namespace Security.Game.Directing
                 script.AddAction(Constants.OUTPUT, new DrawDoorAction(VideoService));
             }
             script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
-            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
+            if (stats.currentScene == Constants.OFFICE_NAME || stats.currentScene == Constants.STAGE_NAME || 
+            stats.currentScene == Constants.ROOM1_NAME || stats.currentScene == Constants.ROOM2_NAME || 
+            stats.currentScene == Constants.EHALL_NAME || stats.currentScene == Constants.WHALL_NAME){
+                            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
+            }
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
 
         }

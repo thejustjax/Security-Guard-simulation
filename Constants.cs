@@ -135,6 +135,7 @@ namespace Security
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
+        public static string YOU_WIN = "Good Job! You Survived!";
         //ROOM NAMES
 
     }
