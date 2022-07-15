@@ -10,6 +10,7 @@ namespace Security.Game.Casting
         private int clock;
         private int lives;
         private int battery;
+        public string currentScene;
 
         private DateTime start = new DateTime();
         /// <summary>
@@ -92,7 +93,12 @@ namespace Security.Game.Casting
         public void SetStart(DateTime newstart){
             start = newstart;
         }
-        
+        public string GetScene(){
+            return currentScene;
+        }
+        public void SetScene(string newscene){
+            currentScene = newscene;
+        }
         
     }
 }
