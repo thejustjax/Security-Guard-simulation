@@ -115,6 +115,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
+            AddDialog(cast, "Party room 1");
             AddOutputActions(cast, script);
             ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.ROOM1_NAME);
         }
@@ -124,6 +125,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
+            AddDialog(cast, "Party room 2");
             AddOutputActions(cast, script);
         }
 
@@ -131,7 +133,8 @@ namespace Security.Game.Directing
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
-            AddUpdateActions(script);    
+            AddUpdateActions(script);
+            AddDialog(cast, "WHall");    
             AddOutputActions(cast, script);
         }
 
@@ -139,7 +142,8 @@ namespace Security.Game.Directing
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();;
-            AddUpdateActions(script);    
+            AddUpdateActions(script);   
+            AddDialog(cast, "EHall"); 
             AddOutputActions(cast, script);
         }
 
@@ -148,7 +152,8 @@ namespace Security.Game.Directing
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
-            AddUpdateActions(script);    
+            AddUpdateActions(script); 
+            AddDialog(cast, "Office");   
             AddOutputActions(cast, script);
         
         }
