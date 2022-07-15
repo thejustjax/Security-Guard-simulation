@@ -138,7 +138,7 @@ namespace Security.Game.Directing
         private void PrepareEHall(Cast cast, Script script){
             CurrentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
-            script.ClearAllActions();
+            script.ClearAllActions();;
             AddUpdateActions(script);    
             AddOutputActions(cast, script);
         }
@@ -400,7 +400,7 @@ namespace Security.Game.Directing
         private void AddUpdateActions(Script script)
         {
                
-            script.AddAction(Constants.UPDATE, new TimeTracker(DateTime.Now));     
+            script.AddAction(Constants.UPDATE, new TimeTracker());     
             script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }
     }
