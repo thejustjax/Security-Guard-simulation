@@ -16,7 +16,7 @@ namespace Security.Game.Directing
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
-        public string CurrentScene;
+        public string currentScene;
 
         public SceneManager()
         {
@@ -44,8 +44,8 @@ namespace Security.Game.Directing
             {
                 PrepareOffice(cast, script);
             }
-            else if (scene == Constants.OFFICE_NAME){
-                PrepareOffice(cast, script);
+            else if (scene == Constants.STAGE_NAME){
+                PrepareStage(cast, script);
             }
             else if (scene == Constants.ROOM1_NAME){
                 PreparePartyRoom1(cast, script);
@@ -71,7 +71,7 @@ namespace Security.Game.Directing
         // public static string OFFICE_NAME = "Office";
         private void PrepareNewGame(Cast cast, Script script)
         {
-            CurrentScene = Constants.NEW_GAME;
+            currentScene = Constants.NEW_GAME;
             AddStats(cast);
             AddClock(cast);
             AddBattery(cast);
@@ -96,7 +96,7 @@ namespace Security.Game.Directing
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
-            CurrentScene = Constants.NEXT_LEVEL;
+            currentScene = Constants.NEXT_LEVEL;
             AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
@@ -109,19 +109,24 @@ namespace Security.Game.Directing
             PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
             script.AddAction(Constants.OUTPUT, sa);
         }
-
+        private void PrepareStage(Cast cast, Script script){
+            currentScene = Constants.STAGE_NAME;
+            cast.ClearActors(Constants.DIALOG_GROUP);
+            script.ClearAllActions();
+            AddUpdateActions(script);    
+            AddOutputActions(cast, script);
+        }
         private void PreparePartyRoom1(Cast cast, Script script){
-            CurrentScene = Constants.OFFICE_NAME;
+            currentScene = Constants.ROOM1_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
             AddDialog(cast, "Party room 1");
             AddOutputActions(cast, script);
-            ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.ROOM1_NAME);
         }
 
         private void PreparePartyRoom2(Cast cast, Script script){
-            CurrentScene = Constants.OFFICE_NAME;
+            currentScene = Constants.ROOM2_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
@@ -130,7 +135,7 @@ namespace Security.Game.Directing
         }
 
         private void PrepareWHall(Cast cast, Script script){
-            CurrentScene = Constants.OFFICE_NAME;
+            currentScene = Constants.WHALL_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);
@@ -139,7 +144,7 @@ namespace Security.Game.Directing
         }
 
         private void PrepareEHall(Cast cast, Script script){
-            CurrentScene = Constants.OFFICE_NAME;
+            currentScene = Constants.EHALL_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();;
             AddUpdateActions(script);   
@@ -149,7 +154,7 @@ namespace Security.Game.Directing
 
         private void PrepareOffice(Cast cast, Script script)
         {
-            CurrentScene = Constants.OFFICE_NAME;
+            currentScene = Constants.OFFICE_NAME;
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script); 
@@ -164,7 +169,7 @@ namespace Security.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
-            CurrentScene = Constants.TRY_AGAIN;
+            currentScene = Constants.TRY_AGAIN;
             AddDialog(cast, Constants.CLOCKING_IN);
 
             script.ClearAllActions();
@@ -381,13 +386,15 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
-            if (CurrentScene == Constants.OFFICE_NAME){
+            if (currentScene == Constants.OFFICE_NAME){
                 script.AddAction(Constants.OUTPUT, new DrawDoorAction(VideoService));
             }
-            if (CurrentScene == robot.GetLocation()){
-              script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
+            if (currentScene == robot.GetLocation()){
+                script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
             }
- 
+            else{
+
+            }
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
             script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
         }
@@ -405,7 +412,6 @@ namespace Security.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-               
             script.AddAction(Constants.UPDATE, new TimeTracker());     
             script.AddAction(Constants.UPDATE, new RobotMoveDecision());     
         }

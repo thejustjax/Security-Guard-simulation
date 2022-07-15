@@ -38,6 +38,10 @@ namespace Security.Game.Scripting
             {
                 callback.OnNext(Constants.EHALL_NAME);
             }
+            if (keyboardService.IsKeyPressed(Constants.STAGE_BUTTON))
+            {
+                callback.OnNext(Constants.STAGE_NAME);
+            }
 
         }
     }

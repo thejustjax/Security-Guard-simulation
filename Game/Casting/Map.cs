@@ -7,19 +7,15 @@ namespace Security.Game.Casting
     /// <summary>
     /// 
     /// </summary>
-    public class Robot : Actor
+    public class Map : Actor
     {
-        private static Random random = new Random();
-
         private Body body;
         private Image image;
-        public List<int> moveList = new List<int>();
 
-        private string location = Constants.STAGE_NAME;
         /// <summary>
         /// Constructs a new instance of Robot.
         /// </summary>
-        public Robot(Body body, Image image, bool debug = false) : base(debug)
+        public Map(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
             this.image = image;
@@ -41,19 +37,6 @@ namespace Security.Game.Casting
         public Image GetImage()
         {
             return image;
-        }
-
-        public string GetLocation()
-        {
-            return location;
-        }
-
-        public void ChangeLocation(string newlocation)
-        {
-            location = newlocation;
-        }
-        public void ChangeImage(Image newimage){
-            image = newimage;
         }
 
     }
