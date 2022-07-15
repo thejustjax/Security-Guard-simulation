@@ -336,8 +336,6 @@ namespace Security.Game.Directing
 
         private void AddOutputActions(Cast cast, Script script)
         {
-            WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
-            EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
