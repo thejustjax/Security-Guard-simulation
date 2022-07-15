@@ -61,6 +61,8 @@ namespace Security
         public static string ROOM2_BUTTON = "v";
         public static string WHALL_BUTTON = "c";
         public static string EHALL_BUTTON = "x";
+        public static string STAGE_BUTTON = "n";
+
         public static string WESTDOOR_BUTTON = "g";
         public static string EASTDOOR_BUTTON = "h";
 
@@ -103,7 +105,7 @@ namespace Security
         public static string STATS_GROUP = "stats";
         //ROBOT
         public static string ROBOT_GROUP = "robot";
-        public static string ROBOT_IMAGE = "Assets/Images/000.png";
+        public static string ROBOT_IMAGE = "Assets/Images/robot.png";
         public static int ROBOT_HEIGHT = 200;
         public static int ROBOT_WIDTH = 200;
 
