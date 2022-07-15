@@ -348,6 +348,7 @@ namespace Security.Game.Directing
             if (CurrentScene == robot.GetLocation()){
               script.AddAction(Constants.OUTPUT, new DrawRobotAction(VideoService));  
             }
+ 
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
         }
 
