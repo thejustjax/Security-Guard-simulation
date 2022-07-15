@@ -52,9 +52,6 @@ namespace Security.Game.Casting
         {
             location = newlocation;
         }
-        public void ChangeImage(Image newimage){
-            image = newimage;
-        }
 
     }
 }
