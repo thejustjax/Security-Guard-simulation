@@ -7,13 +7,16 @@ namespace Security.Game.Scripting
 {
     public class RobotMoveDecision : Action
     {
+        public RobotMoveDecision(){
+            
+        }
         
         public void Execute(Cast cast, Script script, ActionCallback callback){
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             Body body = robot.GetBody();
             Random random = new Random();
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            if((stats.GetClock() % Constants.MOVE_TIME) == 0 && DateTime.Now.Millisecond < 15){
+            if((stats.GetClock() % Constants.MOVE_TIME) == 3 && !robot.moveList.Contains(stats.GetClock())){
                 if(random.Next(1,21) <= Constants.ROBOT_DIFFICULTY){
                     if (robot.GetLocation() == Constants.STAGE_NAME){
                             robot.ChangeLocation(Constants.ROOM1_NAME);
@@ -35,6 +38,7 @@ namespace Security.Game.Scripting
                     else if (robot.GetLocation() == Constants.OFFICE_NAME){
                         callback.OnNext(Constants.GAME_OVER);
                     }
+                    robot.moveList.Add(stats.GetClock());
                 }
             }
         }

@@ -53,7 +53,7 @@ namespace Security.Game.Scripting
         public void ClearAllActions()
         {
             foreach(string group in actions.Keys)
-            {
+            {   
                 actions[group] = new List<Action>();
             }
         }
