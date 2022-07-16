@@ -11,6 +11,9 @@ namespace Security.Game.Casting
         private int lives;
         private int battery;
         public string currentScene;
+        
+        public bool eastDoorOpen = true;
+        public bool westDoorOpen = true;
 
         private DateTime start = new DateTime();
         /// <summary>
@@ -98,6 +101,28 @@ namespace Security.Game.Casting
         }
         public void SetScene(string newscene){
             currentScene = newscene;
+        }
+        public bool checkWestDoor(){
+            return westDoorOpen;
+        }
+        public void changeWestDoor(){
+            if (westDoorOpen){
+                westDoorOpen = false;
+            }
+            else{
+                westDoorOpen = true;
+            }
+        }
+        public bool checkEastDoor(){
+            return eastDoorOpen;
+        }
+        public void changeEastDoor(){
+            if (eastDoorOpen){
+                eastDoorOpen = false;
+            }
+            else{
+                eastDoorOpen = true;
+            }
         }
         
     }

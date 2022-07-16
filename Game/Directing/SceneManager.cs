@@ -222,7 +222,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.ROBOT_GROUP);
         
             int x = Constants.CENTER_X - Constants.ROBOT_WIDTH / 2;
-            int y = Constants.CENTER_Y - Constants.ROBOT_HEIGHT / 2;
+            int y = Constants.CENTER_Y + Constants.ROBOT_HEIGHT /2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.ROBOT_WIDTH, Constants.ROBOT_HEIGHT);
