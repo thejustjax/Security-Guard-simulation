@@ -117,6 +117,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
+            AddDialog(cast, Constants.STAGE_NAME);
             AddOutputActions(cast, script);
         }
         private void PreparePartyRoom1(Cast cast, Script script){
@@ -125,7 +126,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
-            AddDialog(cast, "Party room 1");
+            AddDialog(cast, Constants.ROOM1_NAME);
             AddOutputActions(cast, script);
         }
 
@@ -135,7 +136,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);    
-            AddDialog(cast, "Party room 2");
+            AddDialog(cast, Constants.ROOM2_NAME);
             AddOutputActions(cast, script);
         }
 
@@ -145,7 +146,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script);
-            AddDialog(cast, "WHall");    
+            AddDialog(cast, Constants.WHALL_NAME);    
             AddOutputActions(cast, script);
         }
 
@@ -155,7 +156,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();;
             AddUpdateActions(script);   
-            AddDialog(cast, "EHall"); 
+            AddDialog(cast, Constants.EHALL_NAME); 
             AddOutputActions(cast, script);
         }
 
@@ -166,7 +167,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.DIALOG_GROUP);
             script.ClearAllActions();
             AddUpdateActions(script); 
-            AddDialog(cast, "Office");   
+            AddDialog(cast, Constants.OFFICE_NAME);   
             AddOutputActions(cast, script);
         
         }

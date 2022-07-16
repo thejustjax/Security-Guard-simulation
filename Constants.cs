@@ -17,6 +17,8 @@ namespace Security
         public static int ROBOT_DIFFICULTY = 15;
         public static int MOVE_TIME = 5;
 
+        public static int BATTERY_DRAIN = 20;
+
         public static int MAX_TIME = 120;
         // SCREEN
         public static int SCREEN_WIDTH = 1040;

@@ -17,13 +17,14 @@ namespace Security.Game.Scripting
             this.keyboardService = keyboardService;
         }
         public void Execute(Cast cast, Script script, ActionCallback callback){
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             if (keyboardService.IsKeyPressed(Constants.WESTDOOR_BUTTON))
             {
-                
+                stats.changeWestDoor();
             }
             if (keyboardService.IsKeyPressed(Constants.EASTDOOR_BUTTON))
             {
-                
+                stats.changeEastDoor();
             }
             
 

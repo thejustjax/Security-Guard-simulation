@@ -35,7 +35,13 @@ namespace Security.Game.Scripting
                         } 
                     }
                     else if (robot.GetLocation() == Constants.EHALL_NAME || robot.GetLocation() == Constants.WHALL_NAME){
-                        robot.ChangeLocation(Constants.OFFICE_NAME);
+                        if(stats.checkWestDoor()){
+                            robot.ChangeLocation(Constants.OFFICE_NAME);
+                        }
+                        else{
+                            stats.RemoveBattery(Constants.BATTERY_DRAIN);
+                            robot.ChangeLocation(Constants.STAGE_NAME);
+                        }
                     }
                     else if (robot.GetLocation() == Constants.OFFICE_NAME){
                         callback.OnNext(Constants.GAME_OVER);
