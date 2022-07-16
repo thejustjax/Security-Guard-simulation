@@ -406,7 +406,8 @@ namespace Security.Game.Directing
             if (stats.currentScene == Constants.OFFICE_NAME || stats.currentScene == Constants.STAGE_NAME || 
             stats.currentScene == Constants.ROOM1_NAME || stats.currentScene == Constants.ROOM2_NAME || 
             stats.currentScene == Constants.EHALL_NAME || stats.currentScene == Constants.WHALL_NAME){
-                            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
+                            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService));
+                            script.AddAction(Constants.OUTPUT, new ChangeDoorPosition(KeyboardService)); 
             }
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
 

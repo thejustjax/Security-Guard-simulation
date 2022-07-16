@@ -12,6 +12,10 @@ namespace Security.Game.Casting
         private int battery;
         public string currentScene;
 
+        public int WestDoorValue;
+
+        public int EastDoorValue;
+
         private DateTime start = new DateTime();
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -98,6 +102,14 @@ namespace Security.Game.Casting
         }
         public void SetScene(string newscene){
             currentScene = newscene;
+        }
+
+        public int GetWestDoorValue(){
+            return WestDoorValue;
+        }
+
+        public int GetEastDoorValue(){
+            return EastDoorValue;
         }
         
     }
