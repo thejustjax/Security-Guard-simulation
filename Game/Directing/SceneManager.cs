@@ -247,7 +247,7 @@ namespace Security.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.EASTDOOR_CLOSED_IMAGE);
+            Image image = new Image(Constants.WESTDOOR_CLOSED_IMAGE);
             EastDoor eastdoor = new EastDoor(body, image, false);
         
             cast.AddActor(Constants.EASTDOOR_GROUP, eastdoor);
@@ -265,7 +265,7 @@ namespace Security.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.EASTDOOR_OPEN_IMAGE);
+            Image image = new Image(Constants.WESTDOOR_OPEN_IMAGE);
             OpenEastDoor openeastdoor = new OpenEastDoor(body, image, false);
         
             cast.AddActor(Constants.OPENEASTDOOR_GROUP, openeastdoor);
