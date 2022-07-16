@@ -76,6 +76,7 @@ namespace Security.Game.Directing
             AddLives(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
             AddRobot(cast);
+            AddMap(cast);
             AddEastDoor(cast);
             AddOpenEastDoor(cast);
             AddWestDoor(cast);
@@ -235,7 +236,23 @@ namespace Security.Game.Directing
         
             cast.AddActor(Constants.ROBOT_GROUP, robot);
         }
-
+        private void AddMap(Cast cast)
+        {
+            cast.ClearActors(Constants.MAP_GROUP);
+        
+            int x = Constants.CENTER_X - Constants.MAP_WIDTH;
+            int y = Constants.CENTER_Y - (Constants.MAP_HEIGHT * 3/2);
+        
+            Point position = new Point(x, y);
+            Point size = new Point(Constants.MAP_WIDTH, Constants.MAP_HEIGHT);
+            Point velocity = new Point(0, 0);
+        
+            Body body = new Body(position, size, velocity);
+            Image image = new Image(Constants.MAP_IMAGE);
+            Map map = new Map(body, image, false);
+        
+            cast.AddActor(Constants.MAP_GROUP, map);
+        }
         private void AddEastDoor(Cast cast)
         {
             cast.ClearActors(Constants.EASTDOOR_GROUP);
@@ -400,6 +417,7 @@ namespace Security.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawMapAction(VideoService));
             if (stats.GetScene() == Constants.OFFICE_NAME){
                 script.AddAction(Constants.OUTPUT, new DrawDoorAction(VideoService));
             }

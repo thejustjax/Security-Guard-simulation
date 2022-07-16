@@ -138,7 +138,10 @@ namespace Security
         public static string CLOCKING_IN = "CLOCKING IN";
         public static string WAS_GOOD_GAME = "GAME OVER";
         public static string YOU_WIN = "Good Job! You Survived!";
-        //ROOM NAMES
-
+        //MAP
+        public static string MAP_GROUP = "map";
+        public static string MAP_IMAGE = "Assets/Images/map.png";
+        public static int MAP_HEIGHT = 200;
+        public static int MAP_WIDTH = 200;
     }
 }
