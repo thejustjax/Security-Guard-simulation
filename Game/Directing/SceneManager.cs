@@ -247,7 +247,7 @@ namespace Security.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.EASTDOOR_CLOSED_IMAGE);
+            Image image = new Image(Constants.WESTDOOR_CLOSED_IMAGE);
             EastDoor eastdoor = new EastDoor(body, image, false);
         
             cast.AddActor(Constants.EASTDOOR_GROUP, eastdoor);
@@ -257,7 +257,7 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.OPENEASTDOOR_GROUP);
         
-            int x = Constants.SCREEN_WIDTH - Constants.EASTDOOR_WIDTH;
+            int x = Constants.SCREEN_WIDTH / 2 + Constants.EASTDOOR_WIDTH;
             int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
@@ -265,7 +265,7 @@ namespace Security.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.EASTDOOR_OPEN_IMAGE);
+            Image image = new Image(Constants.WESTDOOR_OPEN_IMAGE);
             OpenEastDoor openeastdoor = new OpenEastDoor(body, image, false);
         
             cast.AddActor(Constants.OPENEASTDOOR_GROUP, openeastdoor);
@@ -406,7 +406,8 @@ namespace Security.Game.Directing
             if (stats.currentScene == Constants.OFFICE_NAME || stats.currentScene == Constants.STAGE_NAME || 
             stats.currentScene == Constants.ROOM1_NAME || stats.currentScene == Constants.ROOM2_NAME || 
             stats.currentScene == Constants.EHALL_NAME || stats.currentScene == Constants.WHALL_NAME){
-                            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService)); 
+                            script.AddAction(Constants.OUTPUT, new ChangeCameraView(KeyboardService));
+                            script.AddAction(Constants.OUTPUT, new ChangeDoorPosition(KeyboardService)); 
             }
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService)); 
 
