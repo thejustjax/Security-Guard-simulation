@@ -18,7 +18,7 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (Westdoor_Value == 1)
+            if (Westdoor_Value == 0)
             {
                 WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
                 Body westdoorbody = westdoor.GetBody();
@@ -34,7 +34,7 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(westdoorimage, westdoorposition);
             }
 
-            else if (Westdoor_Value == 0)
+            if (Westdoor_Value == 1)
             {
                 OpenWestDoor openwestdoor = (OpenWestDoor)cast.GetFirstActor(Constants.OPENWESTDOOR_GROUP);
                 Body openwestdoorbody = openwestdoor.GetBody();

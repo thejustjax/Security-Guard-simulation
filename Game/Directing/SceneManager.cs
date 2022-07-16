@@ -273,13 +273,13 @@ namespace Security.Game.Directing
             int x = Constants.WESTDOOR_WIDTH / 2;
             int y = Constants.CENTER_Y - Constants.WESTDOOR_HEIGHT / 2;
         
-            Point position = new Point(x, y);
-            Point size = new Point(Constants.WESTDOOR_WIDTH, Constants.WESTDOOR_HEIGHT);
-            Point velocity = new Point(0, 0);
+            Point openwestdoorposition = new Point(x, y);
+            Point openwestdoorsize = new Point(Constants.WESTDOOR_WIDTH, Constants.WESTDOOR_HEIGHT);
+            Point openwestdoorvelocity = new Point(0, 0);
         
-            Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.WESTDOOR_OPEN_IMAGE);
-            OpenWestDoor openwestdoor = new OpenWestDoor(body, image, false);
+            Body openwestdoorbody = new Body(openwestdoorposition, openwestdoorsize, openwestdoorvelocity);
+            Image openwestdoorimage = new Image(Constants.WESTDOOR_OPEN_IMAGE);
+            OpenWestDoor openwestdoor = new OpenWestDoor(openwestdoorbody, openwestdoorimage, false);
         
             cast.AddActor(Constants.OPENWESTDOOR_GROUP, openwestdoor);
         }
