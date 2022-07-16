@@ -257,7 +257,7 @@ namespace Security.Game.Directing
         {
             cast.ClearActors(Constants.OPENEASTDOOR_GROUP);
         
-            int x = Constants.SCREEN_WIDTH - Constants.EASTDOOR_WIDTH;
+            int x = Constants.SCREEN_WIDTH / 2 + Constants.EASTDOOR_WIDTH;
             int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
