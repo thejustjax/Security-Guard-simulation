@@ -20,7 +20,7 @@ namespace Security.Game.Scripting
                 stats.SetStart(DateTime.Now);
             }
             TimeSpan elapsedTime = currentTime.Subtract(stats.GetStart());
-            stats.SetTime(Constants.MAX_TIME-elapsedTime.Seconds);
+            stats.SetTime(Constants.MAX_TIME-((elapsedTime.Minutes*60)+elapsedTime.Seconds));
             if (stats.GetClock() == 0){
                 callback.OnNext(Constants.GAME_WIN);
             }

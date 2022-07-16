@@ -106,23 +106,15 @@ namespace Security.Game.Casting
             return westDoorOpen;
         }
         public void changeWestDoor(){
-            if (westDoorOpen){
-                westDoorOpen = false;
-            }
-            else{
-                westDoorOpen = true;
-            }
+            westDoorOpen = false;
+            eastDoorOpen = true;
         }
         public bool checkEastDoor(){
             return eastDoorOpen;
         }
         public void changeEastDoor(){
-            if (eastDoorOpen){
-                eastDoorOpen = false;
-            }
-            else{
-                eastDoorOpen = true;
-            }
+            westDoorOpen = true;
+            eastDoorOpen = false;
         }
         
     }

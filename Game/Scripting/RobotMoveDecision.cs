@@ -34,13 +34,30 @@ namespace Security.Game.Scripting
                             robot.ChangeLocation(Constants.WHALL_NAME);
                         } 
                     }
-                    else if (robot.GetLocation() == Constants.EHALL_NAME || robot.GetLocation() == Constants.WHALL_NAME){
+                    else if (robot.GetLocation() == Constants.EHALL_NAME){
+                        if(stats.checkEastDoor()){
+                            robot.ChangeLocation(Constants.OFFICE_NAME);
+                        }
+                        else if (stats.GetBattery() > 0){
+                            stats.RemoveBattery(Constants.BATTERY_DRAIN);
+                            robot.ChangeLocation(Constants.STAGE_NAME);
+                        }
+                        else{
+                            stats.changeEastDoor();
+                            robot.ChangeLocation(Constants.OFFICE_NAME);
+                        }
+                    }
+                    else if (robot.GetLocation() == Constants.WHALL_NAME){
                         if(stats.checkWestDoor()){
                             robot.ChangeLocation(Constants.OFFICE_NAME);
                         }
-                        else{
+                        else if (stats.GetBattery() > 0){
                             stats.RemoveBattery(Constants.BATTERY_DRAIN);
                             robot.ChangeLocation(Constants.STAGE_NAME);
+                        }
+                        else{
+                            stats.changeWestDoor();
+                            robot.ChangeLocation(Constants.OFFICE_NAME);
                         }
                     }
                     else if (robot.GetLocation() == Constants.OFFICE_NAME){

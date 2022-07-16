@@ -8,8 +8,6 @@ namespace Security.Game.Scripting
     {
         private VideoService videoService;
         private KeyboardService keyboardService;
-        private int Westdoor_Value = 0;
-        private int Eastdoor_Value = 0;
         
         public DrawDoorAction(VideoService videoService)
         {
@@ -18,7 +16,8 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (Westdoor_Value == 1)
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            if (!stats.checkWestDoor())
             {
                 WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
                 Body westdoorbody = westdoor.GetBody();
@@ -34,7 +33,7 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(westdoorimage, westdoorposition);
             }
 
-            else if (Westdoor_Value == 0)
+            else if (stats.checkWestDoor())
             {
                 OpenWestDoor openwestdoor = (OpenWestDoor)cast.GetFirstActor(Constants.OPENWESTDOOR_GROUP);
                 Body openwestdoorbody = openwestdoor.GetBody();
@@ -50,7 +49,7 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(openwestdoorimage, openwestdoorposition);
             }
 
-            if (Eastdoor_Value == 1)
+            if (!stats.checkEastDoor())
             {
                 EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
                 Body eastdoorbody = eastdoor.GetBody();
@@ -66,7 +65,7 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(eastdoorimage, eastdoorposition);
             }
 
-            else if (Eastdoor_Value == 0)
+            else if (stats.checkEastDoor())
             {
                 OpenEastDoor openeastdoor = (OpenEastDoor)cast.GetFirstActor(Constants.OPENEASTDOOR_GROUP);
                 Body openeastdoorbody = openeastdoor.GetBody();
