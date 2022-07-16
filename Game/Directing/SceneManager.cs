@@ -77,7 +77,9 @@ namespace Security.Game.Directing
             AddDialog(cast, Constants.ENTER_TO_START);
             AddRobot(cast);
             AddEastDoor(cast);
+            AddOpenEastDoor(cast);
             AddWestDoor(cast);
+            AddOpenWestDoor(cast);
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             stats.SetScene(Constants.NEW_GAME);
             script.ClearAllActions();
@@ -238,7 +240,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.EASTDOOR_GROUP);
         
             int x = Constants.SCREEN_WIDTH - Constants.EASTDOOR_WIDTH;
-            int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;;
+            int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.EASTDOOR_WIDTH, Constants.EASTDOOR_HEIGHT);
@@ -256,7 +258,7 @@ namespace Security.Game.Directing
             cast.ClearActors(Constants.OPENEASTDOOR_GROUP);
         
             int x = Constants.SCREEN_WIDTH - Constants.EASTDOOR_WIDTH;
-            int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;;
+            int y = Constants.CENTER_Y - Constants.EASTDOOR_HEIGHT / 2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.EASTDOOR_WIDTH, Constants.EASTDOOR_HEIGHT);
@@ -268,7 +270,6 @@ namespace Security.Game.Directing
         
             cast.AddActor(Constants.OPENEASTDOOR_GROUP, openeastdoor);
         }
-
         private void AddWestDoor(Cast cast)
         {
             cast.ClearActors(Constants.WESTDOOR_GROUP);
@@ -294,13 +295,13 @@ namespace Security.Game.Directing
             int x = Constants.WESTDOOR_WIDTH / 2;
             int y = Constants.CENTER_Y - Constants.WESTDOOR_HEIGHT / 2;
         
-            Point openwestdoorposition = new Point(x, y);
-            Point openwestdoorsize = new Point(Constants.WESTDOOR_WIDTH, Constants.WESTDOOR_HEIGHT);
-            Point openwestdoorvelocity = new Point(0, 0);
+            Point position = new Point(x, y);
+            Point size = new Point(Constants.WESTDOOR_WIDTH, Constants.WESTDOOR_HEIGHT);
+            Point velocity = new Point(0, 0);
         
-            Body openwestdoorbody = new Body(openwestdoorposition, openwestdoorsize, openwestdoorvelocity);
-            Image openwestdoorimage = new Image(Constants.WESTDOOR_OPEN_IMAGE);
-            OpenWestDoor openwestdoor = new OpenWestDoor(openwestdoorbody, openwestdoorimage, false);
+            Body body = new Body(position, size, velocity);
+            Image image = new Image(Constants.WESTDOOR_OPEN_IMAGE);
+            OpenWestDoor openwestdoor = new OpenWestDoor(body, image, false);
         
             cast.AddActor(Constants.OPENWESTDOOR_GROUP, openwestdoor);
         }

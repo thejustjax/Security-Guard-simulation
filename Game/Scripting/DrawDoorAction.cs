@@ -8,8 +8,8 @@ namespace Security.Game.Scripting
     {
         private VideoService videoService;
         private KeyboardService keyboardService;
-        private int Westdoor_Value = 1;
-        private int Eastdoor_Value = 1;
+        private int Westdoor_Value = 0;
+        private int Eastdoor_Value = 0;
         
         public DrawDoorAction(VideoService videoService)
         {
@@ -18,7 +18,7 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (Westdoor_Value == 0)
+            if (Westdoor_Value == 1)
             {
                 WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
                 Body westdoorbody = westdoor.GetBody();
@@ -34,7 +34,7 @@ namespace Security.Game.Scripting
                 videoService.DrawImage(westdoorimage, westdoorposition);
             }
 
-            if (Westdoor_Value == 1)
+            else if (Westdoor_Value == 0)
             {
                 OpenWestDoor openwestdoor = (OpenWestDoor)cast.GetFirstActor(Constants.OPENWESTDOOR_GROUP);
                 Body openwestdoorbody = openwestdoor.GetBody();
@@ -61,11 +61,9 @@ namespace Security.Game.Scripting
                     Point eastdoorpos = eastdoorrectangle.GetPosition();
                     videoService.DrawRectangle(eastdoorsize, eastdoorpos, Constants.PURPLE, false);
                 }
-
                 Image eastdoorimage = eastdoor.GetImage();
                 Point eastdoorposition = eastdoorbody.GetPosition();
                 videoService.DrawImage(eastdoorimage, eastdoorposition);
-                
             }
 
             else if (Eastdoor_Value == 0)
@@ -79,7 +77,6 @@ namespace Security.Game.Scripting
                     Point openeastdoorpos = openeastdoorrectangle.GetPosition();
                     videoService.DrawRectangle(openeastdoorsize, openeastdoorpos, Constants.PURPLE, false);
                 }
-
                 Image openeastdoorimage = openeastdoor.GetImage();
                 Point openeastdoorposition = openeastdoorbody.GetPosition();
                 videoService.DrawImage(openeastdoorimage, openeastdoorposition);
