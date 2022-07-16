@@ -15,19 +15,22 @@ namespace Security.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             Robot robot = (Robot)cast.GetFirstActor(Constants.ROBOT_GROUP);
             Body body = robot.GetBody();
-            if (robot.IsDebug())
-            {
-                Rectangle rectangle = body.GetRectangle();
-                Point size = rectangle.GetSize();
-                Point pos = rectangle.GetPosition();
-                videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
-            }
+            if (stats.GetScene() == robot.GetLocation()){
+                if (robot.IsDebug())
+                {
+                    Rectangle rectangle = body.GetRectangle();
+                    Point size = rectangle.GetSize();
+                    Point pos = rectangle.GetPosition();
+                    videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
+                }
 
-            Image image = robot.GetImage();
-            Point position = body.GetPosition();
-            videoService.DrawImage(image, position);
+                Image image = robot.GetImage();
+                Point position = body.GetPosition();
+                videoService.DrawImage(image, position);
+            }
         }
     }
 }

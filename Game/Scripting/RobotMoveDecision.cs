@@ -16,6 +16,8 @@ namespace Security.Game.Scripting
             Body body = robot.GetBody();
             Random random = new Random();
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            WestDoor westdoor = (WestDoor)cast.GetFirstActor(Constants.WESTDOOR_GROUP);
+            EastDoor eastdoor = (EastDoor)cast.GetFirstActor(Constants.EASTDOOR_GROUP);
             if((stats.GetClock() % Constants.MOVE_TIME) == 3 && !robot.moveList.Contains(stats.GetClock())){
                 if(random.Next(1,21) <= Constants.ROBOT_DIFFICULTY){
                     if (robot.GetLocation() == Constants.STAGE_NAME){
